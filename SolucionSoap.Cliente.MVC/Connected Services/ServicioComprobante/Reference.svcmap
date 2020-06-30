@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d7d536a8-4714-470b-ace5-98cd14dda8c4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50098/Repositorio/ComprobanteRepositorio.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ComprobanteRepositorio.xsd" MetadataType="Schema" ID="2542cd4c-4d16-479e-bc48-37035f8a2c16" SourceId="1" SourceUrl="http://localhost:50098/Repositorio/ComprobanteRepositorio.svc?xsd=xsd0" />
+    <MetadataFile FileName="ComprobanteRepositorio1.xsd" MetadataType="Schema" ID="623ce65e-530d-424b-89da-1439f6999ac9" SourceId="1" SourceUrl="http://localhost:50098/Repositorio/ComprobanteRepositorio.svc?xsd=xsd1" />
+    <MetadataFile FileName="ComprobanteRepositorio2.xsd" MetadataType="Schema" ID="0a02b951-873e-4f8f-adbd-2c89d0f15d92" SourceId="1" SourceUrl="http://localhost:50098/Repositorio/ComprobanteRepositorio.svc?xsd=xsd2" />
+    <MetadataFile FileName="ComprobanteRepositorio.wsdl" MetadataType="Wsdl" ID="c8a8323d-a7d2-4839-b3b4-3ca0af0c8b32" SourceId="1" SourceUrl="http://localhost:50098/Repositorio/ComprobanteRepositorio.svc?wsdl" />
+    <MetadataFile FileName="ComprobanteRepositorio.disco" MetadataType="Disco" ID="59a22088-b294-4336-adfa-e425cfb8faa7" SourceId="1" SourceUrl="http://localhost:50098/Repositorio/ComprobanteRepositorio.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

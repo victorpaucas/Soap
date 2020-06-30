@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SolucionSoap.Servidor.WCF.Modelo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SolucionSoap.Servidor.WCF.Modelo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ComprobanteModelo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClienteComprobante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescuentoComprobante" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaComprobante" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentificadorComprobante" type="xs:int" />
+      <xs:element minOccurs="0" name="ImpuestoComprobante" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SubTotalComprobante" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoComprobante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalComprobante" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VendedorComprobante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComprobanteModelo" nillable="true" type="tns:ComprobanteModelo" />
+  <xs:complexType name="RegistrarRespuestaModelo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRespuestaModelo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdentificadorRespuesta" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegistrarRespuestaModelo" nillable="true" type="tns:RegistrarRespuestaModelo" />
+  <xs:complexType name="BaseRespuestaModelo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorRespuesta" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MensajeRespuesta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseRespuestaModelo" nillable="true" type="tns:BaseRespuestaModelo" />
+  <xs:complexType name="ActualizarRespuestaModelo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRespuestaModelo">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActualizarRespuestaModelo" nillable="true" type="tns:ActualizarRespuestaModelo" />
+  <xs:complexType name="EliminarRespuestaModelo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRespuestaModelo">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EliminarRespuestaModelo" nillable="true" type="tns:EliminarRespuestaModelo" />
+  <xs:complexType name="ObtenerRespuestaModeloOfComprobanteModeloKTVAo3T5">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ObtenerRespuestaModeloOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SolucionSoap.Servidor.WCF.Modelo" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ComprobanteModelo" Namespace="http://schemas.datacontract.org/2004/07/SolucionSoap.Servidor.WCF.Modelo" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRespuestaModelo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ModeloRespuesta" nillable="true" type="tns:ComprobanteModelo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObtenerRespuestaModeloOfComprobanteModeloKTVAo3T5" nillable="true" type="tns:ObtenerRespuestaModeloOfComprobanteModeloKTVAo3T5" />
+  <xs:complexType name="ListarRespuestaModeloOfComprobanteModeloKTVAo3T5">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ListarRespuestaModeloOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/SolucionSoap.Servidor.WCF.Modelo" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ComprobanteModelo" Namespace="http://schemas.datacontract.org/2004/07/SolucionSoap.Servidor.WCF.Modelo" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRespuestaModelo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ListaRespuesta" nillable="true" type="tns:ArrayOfComprobanteModelo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListarRespuestaModeloOfComprobanteModeloKTVAo3T5" nillable="true" type="tns:ListarRespuestaModeloOfComprobanteModeloKTVAo3T5" />
+  <xs:complexType name="ArrayOfComprobanteModelo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComprobanteModelo" nillable="true" type="tns:ComprobanteModelo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComprobanteModelo" nillable="true" type="tns:ArrayOfComprobanteModelo" />
+</xs:schema>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="~/Images/favicon/favicon.ico" />
+    <link rel="stylesheet" href="~/Libraries/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Libraries/fontawesome/css/all.min.css" />
+
+    @RenderSection("css", required: false)
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <a class="navbar-brand" href="/">Soap</a>
+        </nav>
+        <div class="container-fluid">
+            @RenderBody()
+            <hr/>
+            <footer>
+                <p>&copy; 2020 - Victor Hugo Paucas Navarro</p>
+            </footer>
+        </div>
+    </div>
+    <script src="~/Libraries/jquery/js/jquery.min.js"></script>
+    <script src="~/Libraries/jquery/js/jquery.validate.min.js"></script>
+    <script src="~/Libraries/moment/moment.min.js"></script>
+    <script src="~/Libraries/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Libraries/fontawesome/js/all.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

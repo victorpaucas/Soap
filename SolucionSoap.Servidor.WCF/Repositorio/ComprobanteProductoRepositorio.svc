@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SolucionSoap.Servidor.WCF.Repositorio.ComprobanteProductoRepositorio" CodeBehind="ComprobanteProductoRepositorio.svc.cs" %>

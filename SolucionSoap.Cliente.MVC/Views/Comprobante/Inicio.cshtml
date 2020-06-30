@@ -1,0 +1,186 @@
+﻿
+@{
+    ViewBag.Title = "Comprobante";
+    Layout = "~/Views/Compartido/Menu.cshtml";
+}
+
+<div class="card border-info mt-3">
+    <div class="card-header">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h5>Comprobantes</h5>
+            </div>
+            <div>
+                <button type="button" class="btn btn-outline-primary btn-sm" id="crearComprobante" name="crearComprobante"><span class="fa fa-plus"></span> Crear Comprobante</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive-sm">
+            <table class="table table-sm table-striped border-bottom border-left border-right" id="tablaComprobante" name="tablaComprobante">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">N°</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Vendedor</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalComprobante" tabindex="-1" role="dialog" aria-labelledby="modalComprobanteTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalComprobanteTitulo"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" id="identificadorComprobante" value="0">
+                    <div class="form-group row">
+                        <div class="col-lg-3">
+                            <label for="numeroComprobante" class="col-form-label col-form-label-sm">N° Comprobante:</label>
+                            <input type="text" class="col-sm-12 form-control form-control-sm" id="numeroComprobante" value="Autogenerado" readonly>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="tipoComprobante" class="col-form-label col-form-label-sm">Tipo:</label>
+                            <select class="col-sm-12 custom-select custom-select-sm" id="tipoComprobante">
+                                <option value="0" selected>Seleccionar</option>
+                                <option value="Boleta">Boleta</option>
+                                <option value="Factura">Factura</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="vendedorComprobante" class="col-form-label col-form-label-sm">Vendedor:</label>
+                            <input type="text" class="col-sm-12 form-control form-control-sm" id="vendedorComprobante">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="clienteComprobante" class="col-form-label col-form-label-sm">Cliente:</label>
+                            <input type="text" class="col-sm-12 form-control form-control-sm" id="clienteComprobante">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-12">
+                            <div class="card border-info">
+                                <div class="card-header">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h5>Productos</h5>
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn btn-outline-primary btn-sm" id="crearComprobanteProducto" name="crearComprobanteProducto"><span class="fa fa-plus"></span> Crear Producto</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" style="overflow-y: scroll; max-height: 300px;">
+                                    <div class="table-responsive-sm">
+                                        <table class="table table-sm table-striped border-bottom border-left border-right" id="tablaComprobanteProducto" name="tablaComprobanteProducto">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col"></th>
+                                                    <th scope="col">Producto</th>
+                                                    <th scope="col">Cantidad</th>
+                                                    <th scope="col">Precio (S/.)</th>
+                                                    <th scope="col">Total (S/.)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-3">
+                            <label for="descuentoComprobante" class="col-form-label col-form-label-sm">Descuento (S/.):</label>
+                            <input type="text" class="col-sm-12 form-control form-control-sm" id="descuentoComprobante" value="0.00">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="impuestoComprobante" class="col-form-label col-form-label-sm">Impuesto (IGV 18%):</label>
+                            <input type="text" class="col-sm-12 form-control form-control-sm" id="impuestoComprobante" value="0.00" readonly>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="subTotalComprobante" class="col-form-label col-form-label-sm">Sub Total (S/.):</label>
+                            <input type="text" class="col-sm-12 form-control form-control-sm" id="subTotalComprobante" value="0.00" readonly>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="totalComprobante" class="col-form-label col-form-label-sm">Total (S/.):</label>
+                            <input type="text" class="col-sm-12 form-control form-control-sm" id="totalComprobante" value="0.00" readonly>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal"><span class="fas fa-sign-out-alt"></span> Cerrar</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-success btn-sm" id="guardarComprobante" name="guardarComprobante"><span class="fas fa-save"></span> Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalComprobanteProducto" tabindex="-1" role="dialog" aria-labelledby="modalComprobanteProductoTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalComprobanteProductoTitulo"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" id="identificadorComprobanteProducto" value="0">
+                    <div class="form-group row">
+                        <div class="col-lg-12">
+                            <label for="nombreComprobanteProducto" class="col-form-label col-form-label-sm">Nombre:</label>
+                            <input type="text" class="col-sm-12 form-control form-control-sm" id="nombreComprobanteProducto">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-4">
+                            <label for="cantidadComprobanteProducto" class="col-form-label col-form-label-sm">Cantidad:</label>
+                            <input type="text" class="col-sm-12 form-control form-control-sm" id="cantidadComprobanteProducto" value="0">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="precioComprobanteProducto" class="col-form-label col-form-label-sm">Precio:</label>
+                            <input type="text" class="col-sm-12 form-control form-control-sm" id="precioComprobanteProducto" value="0.00">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="totalComprobanteProducto" class="col-form-label col-form-label-sm">Total:</label>
+                            <input type="text" class="col-sm-12 form-control form-control-sm" id="totalComprobanteProducto" value="0.00" readonly>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal"><span class="fas fa-sign-out-alt"></span> Cerrar</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-success btn-sm" id="guardarComprobanteProducto" name="guardarComprobanteProducto"><span class="fas fa-save"></span> Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Libraries/soap/comprobante/inicio.js"></script>
+}
