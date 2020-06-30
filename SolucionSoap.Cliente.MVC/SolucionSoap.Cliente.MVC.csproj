@@ -1765,6 +1765,8 @@
     <Content Include="Libraries\jquery\js\jquery.validate.min.js" />
     <Content Include="Libraries\moment\moment.min.js" />
     <Content Include="Libraries\soap\comprobante\inicio.js" />
+    <Content Include="Libraries\sweetalert\css\sweetalert2.css" />
+    <Content Include="Libraries\sweetalert\js\sweetalert2.min.js" />
     <Content Include="Web.config" />
     <Content Include="Connected Services\ServicioComprobante\SolucionSoap.Cliente.MVC.ServicioComprobante.ActualizarRespuestaModelo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
